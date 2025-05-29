@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Eu Amo você</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: #000;
+    }
+    .fundo-euteamo {
+
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 12vw;
+      font-family: 'Indie Flower', cursive, Arial, sans-serif;
+      color: #ffb6c1;
+      opacity: 0.22;
+      white-space: nowrap;
+      user-select: none;
+      pointer-events: none;
+      z-index: 0;
+      letter-spacing: 0.11em;
+      text-align: center;
+      font-weight: bold;
+      filter: blur(1.2px) drop-shadow(0 0 24px #8e2839cc);
+      animation: fundoMove 8s ease-in-out infinite alternate;
+      text-shadow: 0 0 40px #ffb6c1, 0 0 80px #ffb6c1;
+    }
+    @keyframes fundoMove {
+      0%   { transform: translate(-50%, -50%) scale(1) rotate(-2deg);}
+      30%  { transform: translate(-48%, -52%) scale(1.04) rotate(2deg);}
+      60%  { transform: translate(-52%, -48%) scale(1.02) rotate(-3deg);}
+      100% { transform: translate(-50%, -50%) scale(1.05) rotate(2deg);}
+    }
+    .teamo {
+      position: absolute;
+      font-size: 2.3em;
+      font-family: 'Indie Flower', cursive, Arial, sans-serif;
+      opacity: 1;
+      white-space: pre;
+      pointer-events: none;
+      user-select: none;
+      z-index: 1;
+      will-change: transform, opacity;
+      transition: filter 0.2s, opacity 0.2s, transform 0.2s;
+      animation: brilho 2.5s linear infinite alternate;
+    }
+    /* Tons apaixonantes: rosa, vermelho, lilás, dourado suave */
+    .teamo.color1 { color: #ff6f91; text-shadow: 0 0 16px #ff6f91, 0 0 24px #fff, 0 0 32px #ffb6c1; }
+    .teamo.color2 { color: #ffb6c1; text-shadow: 0 0 16px #ffb6c1, 0 0 24px #fff, 0 0 32px #ff6f91; }
+    .teamo.color3 { color: #f67280; text-shadow: 0 0 16px #f67280, 0 0 24px #fff, 0 0 32px #ffb6c1; }
+    .teamo.color4 { color: #c06c84; text-shadow: 0 0 16px #c06c84, 0 0 24px #fff, 0 0 32px #f67280; }
+    .teamo.color5 { color: #a385e0; text-shadow: 0 0 16px #a385e0, 0 0 24px #fff, 0 0 32px #f67280; }
+    .teamo.color6 { color: #ffb86b; text-shadow: 0 0 16px #ffb86b, 0 0 24px #fff, 0 0 32px #ffb6c1; }
+    .teamo.color7 { color: #ff5e62; text-shadow: 0 0 16px #ff5e62, 0 0 24px #fff, 0 0 32px #ffb6c1; }
+    .teamo.color8 { color: #fcb1b1; text-shadow: 0 0 16px #fcb1b1, 0 0 24px #fff, 0 0 32px #ffb6c1; }
+    @keyframes brilho {
+      0% { filter: brightness(1) drop-shadow(0 0 8px #fff7); }
+      100% { filter: brightness(1.2) drop-shadow(0 0 24px #fff); }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="fundo-euteamo">eu amo você</div>
+  <script>
+    function criarPalavras() {
+      const quantidade = 5 + Math.floor(Math.random() * 4); // 5 a 8 palavras por vez
+      const largura = window.innerWidth;
+      const altura = window.innerHeight;
+      for (let i = 0; i < quantidade; i++) {
+        const span = document.createElement('span');
+        span.className = 'teamo';
+
+        // Cores animadas apaixonantes
+        const corClasse = 'color' + (1 + Math.floor(Math.random() * 8));
+        span.classList.add(corClasse);
+
+        // Texto animado
+        span.innerText = 'eu te amo';
+
+        // Profundidade: sorteia um "nível" de 0 (mais longe) a 2 (mais perto)
+        const profundidade = Math.floor(Math.random() * 3);
+        let fontSize, blur, opacidade, zIndex, duracao;
+        if (profundidade === 0) {
+          fontSize = "1.3em";
+          blur = "blur(1.2px) brightness(0.8)";
+          opacidade = 0.5;
+          zIndex = 1;
+          duracao = 8500;
+        } else if (profundidade === 1) {
+          fontSize = "1.8em";
+          blur = "blur(0.4px)";
+          opacidade = 0.8;
+          zIndex = 2;
+          duracao = 4800;
+        } else {
+          fontSize = "2.7em";
+          blur = "none";
+          opacidade = 1;
+          zIndex = 3;
+          duracao = 3200;
+        }
+        span.style.fontSize = fontSize;
+        span.style.filter = blur;
+        span.style.opacity = opacidade;
+        span.style.zIndex = zIndex;
+
+        // Sorteia um ponto de partida em qualquer canto da tela
+        const lados = ['top', 'bottom', 'left', 'right'];
+        const ladoSaida = lados[Math.floor(Math.random() * lados.length)];
+        let x0, y0, x1, y1;
+
+        if (ladoSaida === 'top') {
+          x0 = Math.random() * largura;
+          y0 = -60;
+          x1 = Math.random() * largura;
+          y1 = altura + 60;
+        } else if (ladoSaida === 'bottom') {
+          x0 = Math.random() * largura;
+          y0 = altura + 60;
+          x1 = Math.random() * largura;
+          y1 = -60;
+        } else if (ladoSaida === 'left') {
+          x0 = -160;
+          y0 = Math.random() * altura;
+          x1 = largura + 160;
+          y1 = Math.random() * altura;
+        } else { // right
+          x0 = largura + 160;
+          y0 = Math.random() * altura;
+          x1 = -160;
+          y1 = Math.random() * altura;
+        }
+
+        // Posição inicial
+        span.style.left = x0 + 'px';
+        span.style.top = y0 + 'px';
+
+        // Sorteia ângulos de rotação para o início e fim
+        const anguloInicial = (Math.random() * 60 - 30); // -30 a +30 graus
+        const anguloFinal = (Math.random() * 60 - 30);   // -30 a +30 graus
+
+        // Animação de movimento e rotação
+        span.animate([
+          {
+            transform: `rotate(${anguloInicial}deg) scale(1)`,
+            left: x0 + 'px',
+            top: y0 + 'px',
+            opacity: opacidade
+          },
+          {
+            transform: `rotate(${anguloFinal}deg) scale(${1 + profundidade*0.1})`,
+            left: x1 + 'px',
+            top: y1 + 'px',
+            opacity: 0
+          }
+        ], {
+          duration: duracao,
+          fill: "forwards",
+          easing: "ease-in"
+        });
+
+        setTimeout(() => {
+          span.style.left = x1 + 'px';
+          span.style.top = y1 + 'px';
+          span.style.opacity = 0;
+        }, duracao);
+
+        document.body.appendChild(span);
+        setTimeout(() => span.remove(), duracao + 900);
+      }
+    }
+
+    setInterval(criarPalavras, 400);
+  </script>
+</body>
+</html>

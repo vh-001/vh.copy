@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dia dos Namorados!</title>
+  <style>
+    
+ @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #cfe8c9;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    header {
+      background-color: #76a169;
+      padding: 30px;
+      color: rgba(255, 255, 255, 0.712);
+      font-size: 2em;
+    }
+
+    h1{
+      margin-bottom: -10px;
+      font-size: 6rem;
+      font-family: "Great Vibes", cursive;
+    }
+
+    section {
+      padding: 40px 20px;
+    }
+    .photo-grid {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+    .photo-block {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+      gap: 20px;
+    }
+    .photo-block:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+    .photo-frame {
+      width: 500px;
+      height: 500px;
+      background-color: #c5f5d8;
+      border: 5px solid #000000;
+      border-radius: 15px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .carousel-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .carousel-img.active {
+      display: block;
+    }
+    
+
+    /* ...existing code... */
+    .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: black;
+    border: none;
+    color: white;
+    font-size: 1.2em; /* Diminuído */
+    padding: 0 6px;   /* Diminuído */
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 2;
+    user-select: none;
+    width: 32px;      /* Tamanho fixo menor */
+    height: 32px;
+    line-height: 32px;
+    }
+    /* ...existing code... */
+    .carousel-btn.prev {
+      left: 10px;
+    }
+    .carousel-btn.next {
+      right: 10px;
+    }
+    .quote {
+      font-size: 1.2em;
+      max-width: 300px;
+      color: #000000;
+    }
+
+    .quote p {
+        margin-top: -10px;
+        font-family: "Patrick Hand", cursive;
+        font-size: 1.3rem;
+    }
+
+    footer {
+       font-family: "Playfair Display", serif;
+      background-color: #76a169;
+      padding: 20px;
+      font-size: 1.1rem;
+      font-weight: bolder;
+      color: rgba(255, 255, 255, 0.712);
+    }
+
+    h2{
+      font-size: 1.3rem;
+       font-family: "Playfair Display", serif;
+    }
+
+    @media (max-width: 600px) {
+
+      body {
+    font-size: 1.05em;
+  }
+  header {
+    padding: 18px;
+    font-size: 1em;
+  }
+  header h1 {
+    font-size: 2.1em;
+    padding: 0 5px;
+    margin-bottom: 0;
+  }
+  header h2 {
+    font-size: 1em;
+    padding: 0 5px;
+    margin-top: 10px;
+  }
+
+  section {
+    padding: 18px 2vw;
+  }
+  .photo-block {
+    width: 98vw;
+    max-width: 100vw;
+    margin: 0 auto 18px auto;
+  }
+  .photo-frame {
+    width: 95vw;
+    max-width: 350px;
+    height: auto;
+    aspect-ratio: 1/1; /* Mantém quadrado, se desejar */
+  }
+  .carousel-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 1em;
+  }
+  .quote {
+    font-size: 0.98em;
+    padding: 10px 4px;
+  }
+  footer {
+    font-size: 0.98em;
+    padding: 12px 4px;
+  }
+  .carousel-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Feliz dia dos namorados!
+    <h2>E aqui, nesse novo jeito que encontrei de expressar meu amor por você, decidi me superar, e foi assim que tive a ideia de criar o nosso site.</h2>
+    </h1>
+  </header>
+
+  <section class="photo-grid">
+    <div class="photo-block">
+      <div class="photo-frame">
+        <button class="carousel-btn prev">&#8592;</button>
+        <img src="site past/ft13certa.png" class="carousel-img active" alt="Foto 1">
+        <img src="site past/ft8.jpeg" class="carousel-img" alt="Foto 1b">
+        <img src="site past/ft7.jpeg" class="carousel-img" alt="Foto 1c">
+        <button class="carousel-btn next">&#8594;</button>
+      </div>
+      <div class="quote"><strong>AMOR EST VITAE ESSEMTIA;</strong><br>
+        <br> <p>“O amor é a essência da vida."  Uma maneira de expressar que o amor é fundamental para a existência humana. E assim, venho lhe afirmar, você é o amor que eu escolhi para minha vida.</p>
+      </div>
+    </div>
+    <div class="photo-block">
+      <div class="photo-frame">
+        <button class="carousel-btn prev">&#8592;</button>
+        <img src="site past/ft11.jpeg" class="carousel-img active" alt="Foto 2">
+        <img src="site past/ft14.jpeg" class="carousel-img" alt="Foto 2b">
+        <img src="site past/ft12.jpeg" class="carousel-img" alt="Foto 2c">
+        <button class="carousel-btn next">&#8594;</button>
+      </div>
+      <div class="quote"><p>Love is composed of a single soul inhabiting two bodies.</p></div>
+    </div>
+    <div class="photo-block">
+      <div class="photo-frame">
+        <button class="carousel-btn prev">&#8592;</button>
+        <img src="site past/ft10certa.png" class="carousel-img active" alt="Foto 3">
+        <img src="site past/ft5.jpeg" class="carousel-img" alt="Foto 3b">
+        <img src="site past/ft22.png" class="carousel-img" alt="Foto 3c">
+        <button class="carousel-btn next">&#8594;</button>
+      </div>
+      <div class="quote">
+        <strong>AMOR VINCIT OMNIA;</strong><br><br><p> “O amor conquista tudo.” Uma afirmação sobre a força do amor, capaz de superar qualquer obstáculo ou dificuldade, mostrando que estamos conquistando e ainda conquistaremos muitas coisas juntos.</p>
+    </div>
+       
+    </div>
+    <div class="photo-block">
+      <div class="photo-frame">
+        <button class="carousel-btn prev">&#8592;</button>
+        <img src="site past/ft16.jpeg" class="carousel-img active" alt="Foto 4">
+        <img src="site past/ft19.jpeg" class="carousel-img" alt="Foto 4b">
+        <img src="site past/ft15.jpeg" class="carousel-img" alt="Foto 4c">
+        <button class="carousel-btn next">&#8594;</button>
+      </div>
+      <div class="quote"><p>Love does not dominate us; it cultivates us.</p></div>
+    </div>
+    <div class="photo-block">
+      <div class="photo-frame">
+        <button class="carousel-btn prev">&#8592;</button>
+        <img src="site past/ft1.jpeg" class="carousel-img active" alt="Foto 5">
+        <img src="site past/ft26.jpeg" class="carousel-img" alt="Foto 5b">
+        <img src="site past/ft23 (2).jpeg" class="carousel-img" alt="Foto 5c">
+        <button class="carousel-btn next">&#8594;</button>
+      </div>
+      <div class="quote"><strong>AMOR EST VINCULUM;</strong><br><br><p>“O amor é um vínculo.” Com essa expressão, quero enfatizar a conexão profunda que temos e o quanto estamos cada vez mais unidos, dia após dia.</p></div>
+    </div> 
+    <div class="photo-block">
+      <div class="photo-frame">
+        <button class="carousel-btn prev">&#8592;</button>
+        <img src="site past/ft20.jpeg" class="carousel-img active" alt="Foto 6">
+        <img src="site past/ft25.jpeg" class="carousel-img" alt="Foto 6b">
+        <img src="site past/ft24.jpeg" class="carousel-img" alt="Foto 6c">
+        <button class="carousel-btn next">&#8594;</button>
+      </div>
+      <div class="quote"><p>I look at you and see the rest of our lives.</p></div>
+    </div>
+    <div class="photo-block">
+      <div class="photo-frame">
+        <button class="carousel-btn prev">&#8592;</button>
+        <img src="site past/ft23.jpeg" class="carousel-img active" alt="Foto 7">
+        <img src="site past/ft28.jpeg" class="carousel-img" alt="Foto 7b">
+        <img src="site past/ft21.jpeg" class="carousel-img" alt="Foto 7c">
+        <button class="carousel-btn next">&#8594;</button>
+      </div>
+      <div class="quote"><strong>AMAR EST DONUM</strong> <br><br><p>“Amar é um presente.” E agradeço todos os dias por ter sido presenteado com o seu/nossos amor.</p></div>
+     
+    </div>
+    <div class="photo-block">
+      <div class="photo-frame">
+        <button class="carousel-btn prev">&#8592;</button>
+        <img src="site past/ft2.jpeg" class="carousel-img active" alt="Foto 8">
+        <img src="site past/ft3.jpeg" class="carousel-img" alt="Foto 8b">
+        <img src="site past/ft4.jpeg" class="carousel-img" alt="Foto 8c">
+        <button class="carousel-btn next">&#8594;</button>
+      </div>
+      <div class="quote"><p>And suddenly, all the love songs were about you.</p></div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Não sei se você chegou a notar, mas são 8 cards com 3 fotos cada. E algo que se mantém constante em todos eles é: eu estou sempre ao seu lado. É assim que quero passar todas as minhas horas, dias, meses e anos, ao seu lado. eu<a href="zoando.html">...ler mais</a></p>
+  </footer>
+
+  <script>
+    // Carrossel para cada bloco de fotos
+    document.querySelectorAll('.photo-frame').forEach(function(frame) {
+      const imgs = frame.querySelectorAll('.carousel-img');
+      let idx = 0;
+      const prev = frame.querySelector('.carousel-btn.prev');
+      const next = frame.querySelector('.carousel-btn.next');
+      function showImg(i) {
+        imgs.forEach((img, j) => img.classList.toggle('active', j === i));
+      }
+      prev.onclick = function() {
+        idx = (idx - 1 + imgs.length) % imgs.length;
+        showImg(idx);
+      };
+      next.onclick = function() {
+        idx = (idx + 1) % imgs.length;
+        showImg(idx);
+      };
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dia 11 e 12</title>
+    <style>
+      @charset "UTF-8";
+
+body {
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            background-color: black;
+        }
+
+        img {
+            width: 350PX;
+            border-radius: 5px;
+            border: 6px solid white;
+        }
+
+        h2 {
+            color: white;
+            font-family: 'Arial', sans-serif;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+      .botao-pulsante {
+        background: #76a169;
+        color: #fff;
+        border: none;
+        padding: 15px 40px;
+        font-size: 1.2rem;
+        border-radius: 30px;
+        cursor: pointer;
+        font-family: 'Arial', sans-serif;
+        font-weight: bold;
+        letter-spacing: 1px;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+        animation: pulse 1.2s infinite;
+        transition: background 0.3s;
+      }
+      @keyframes pulse {
+        0% { transform: scale(1); box-shadow: 0 0 0 0 #76a16977; }
+        70% { transform: scale(1.08); box-shadow: 0 0 0 12px #76a16922; }
+        100% { transform: scale(1); box-shadow: 0 0 0 0 #76a16977; }
+      }
+    </style>
+</head>
+<body>
+    <h2>⬇️Toque abaixo e saiba mais⬇️</h2>
+    <img src="site past/fig-dog.jpeg" alt="">
+    <button onclick="window.location.href='diaonzedoze.html'" class="botao-pulsante">Clique Aqui</button>
+</body>
+</html>
